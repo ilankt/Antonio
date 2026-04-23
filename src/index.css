@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink: #0F1419;
+    --charcoal: #262626;
+    --surface: #FAF8F5;
+    --teal: #B4D4C9;
+    --brown: #8B7355;
+    --border-light: #E5E5E0;
+    --muted-text: #8C8C8C;
+    --radius: 0.625rem;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--charcoal);
+    background-color: var(--surface);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--teal);
+    color: var(--ink);
+  }
+}
