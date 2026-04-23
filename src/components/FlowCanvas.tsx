@@ -32,18 +32,17 @@ export default function FlowCanvas() {
     if (!ctx) return
 
     let time = 0
-    const dpr = window.devicePixelRatio || 1
 
     const resize = () => {
       const parent = canvas.parentElement
       if (!parent) return
       const w = parent.clientWidth
       const h = parent.clientHeight
+      if (w === 0 || h === 0) return
+      const dpr = window.devicePixelRatio || 1
       canvas.width = w * dpr
       canvas.height = h * dpr
-      canvas.style.width = w + 'px'
-      canvas.style.height = h + 'px'
-      ctx.scale(dpr, dpr)
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     }
 
     resize()
@@ -153,15 +152,24 @@ export default function FlowCanvas() {
 
     animRef.current = requestAnimationFrame(draw)
 
-    const handleResize = () => {
-      ctx.setTransform(1, 0, 0, 1, 0, 0)
+    const parent = canvas.parentElement!
+    const ro = new ResizeObserver(() => resize())
+    ro.observe(parent)
+
+    // Also re-size when browser zoom changes the device pixel ratio
+    let dprMq = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
+    const onDprChange = () => {
       resize()
+      dprMq.removeEventListener('change', onDprChange)
+      dprMq = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
+      dprMq.addEventListener('change', onDprChange)
     }
-    window.addEventListener('resize', handleResize)
+    dprMq.addEventListener('change', onDprChange)
 
     return () => {
       cancelAnimationFrame(animRef.current)
-      window.removeEventListener('resize', handleResize)
+      ro.disconnect()
+      dprMq.removeEventListener('change', onDprChange)
     }
   }, [])
 
