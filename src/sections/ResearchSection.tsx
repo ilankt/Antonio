@@ -151,7 +151,7 @@ export default function ResearchSection() {
         >
           {pillars.map((p) => (
             <div key={p.num} className="pt-8 border-t-2 border-teal opacity-0">
-              <span className="font-sans text-[11px] text-muted-text block mb-4">
+              <span className="font-sans text-xs text-muted-text block mb-4">
                 {p.num}
               </span>
               <h3 className="font-sans text-lg font-medium text-ink mb-3">

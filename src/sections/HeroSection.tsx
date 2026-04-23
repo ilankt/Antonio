@@ -165,7 +165,7 @@ export default function HeroSection() {
           {researchTags.map((tag) => (
             <span
               key={tag}
-              className="font-sans text-[11px] font-medium text-brown border border-border-light rounded-full px-4 py-[6px] opacity-0"
+              className="font-sans text-xs font-medium text-brown border border-border-light rounded-full px-4 py-[6px] opacity-0"
             >
               {tag}
             </span>
@@ -176,14 +176,14 @@ export default function HeroSection() {
           <a
             href="#publications"
             onClick={(e) => handleCtaClick(e, '#publications')}
-            className="font-sans text-[13px] font-medium text-surface bg-ink rounded-md px-7 py-3 hover:bg-charcoal transition-colors duration-300"
+            className="font-sans text-sm font-medium text-surface bg-ink rounded-md px-7 py-3 hover:bg-charcoal transition-colors duration-300"
           >
             View Publications
           </a>
           <a
             href="#contact"
             onClick={(e) => handleCtaClick(e, '#contact')}
-            className="font-sans text-[13px] font-medium text-ink bg-transparent border border-border-light rounded-md px-7 py-3 hover:border-ink transition-colors duration-300"
+            className="font-sans text-sm font-medium text-ink bg-transparent border border-border-light rounded-md px-7 py-3 hover:border-ink transition-colors duration-300"
           >
             Get in Touch
           </a>

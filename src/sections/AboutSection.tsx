@@ -151,13 +151,13 @@ export default function AboutSection() {
                     i < timeline.length - 1 ? 'pb-7' : ''
                   } opacity-0`}
                 >
-                  <span className="font-sans text-[11px] text-muted-text block mb-1">
+                  <span className="font-sans text-xs text-muted-text block mb-1">
                     {item.year}
                   </span>
                   <h4 className="font-sans text-base font-medium text-ink mb-1">
                     {item.role}
                   </h4>
-                  <p className="font-sans text-[13px] text-charcoal">
+                  <p className="font-sans text-sm text-charcoal">
                     {item.institution}
                   </p>
                 </div>

@@ -163,7 +163,7 @@ export default function ContactSection() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans text-xs font-medium text-charcoal border-b border-border-light pb-[2px] hover:border-ink hover:text-ink transition-all duration-300 opacity-0"
+              className="font-sans text-sm font-medium text-charcoal border-b border-border-light pb-[2px] hover:border-ink hover:text-ink transition-all duration-300 opacity-0"
             >
               {link.label}
             </a>

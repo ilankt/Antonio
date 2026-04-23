@@ -106,7 +106,7 @@ export default function PublicationsSection() {
               <h3 className="font-sans text-base font-medium text-ink leading-[1.5] mb-2 hover:text-brown transition-colors duration-300 cursor-pointer">
                 {pub.title}
               </h3>
-              <p className="font-sans text-[13px] italic text-charcoal mb-1">
+              <p className="font-sans text-sm italic text-charcoal mb-1">
                 {pub.venue}
               </p>
               <p className="font-sans text-xs text-muted-text mb-1">
@@ -116,7 +116,7 @@ export default function PublicationsSection() {
                 {pub.year}
               </p>
               {pub.awards && (
-                <p className="font-sans text-[11px] text-brown mt-1">
+                <p className="font-sans text-xs text-brown mt-1">
                   {pub.awards}
                 </p>
               )}
@@ -129,7 +129,7 @@ export default function PublicationsSection() {
           href="https://scholar.google.pt/citations?user=IUHFbhkAAAAJ"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block font-sans text-[13px] font-medium text-ink mt-8 hover:text-brown transition-colors duration-300 opacity-0"
+          className="inline-block font-sans text-sm font-medium text-ink mt-8 hover:text-brown transition-colors duration-300 opacity-0"
         >
           View all publications on Google Scholar &rarr;
         </a>
